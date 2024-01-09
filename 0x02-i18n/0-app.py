@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""This module setup a basic flask app
+"""This module define a flask aoplication
 """
-from flask import flask, render_template
-
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
