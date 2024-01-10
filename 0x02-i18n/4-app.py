@@ -23,6 +23,9 @@ babel = Babel(app)
 def get_locale():
     """Get user prefered language
     """
+    locale = request.args.get('locale', None)
+    if locale and locale in app.config["LANGUAGES"]:
+        return locale
     return request.accept_languages.best_match(
             app.config["LANGUAGES"])
 
@@ -34,4 +37,4 @@ def home():
     context = dict(
             home_title=_("Welcome to Holberton"),
             home_header=_("Hello world!"))
-    return render_template("3-index.html", **context)
+    return render_template("4-index.html", **context)
